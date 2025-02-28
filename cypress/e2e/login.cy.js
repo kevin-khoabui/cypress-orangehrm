@@ -27,7 +27,7 @@ describe ('Login',()=>{
         cy.get(LoginPage.passwordInput).type(Cypress.env("validPassword"))
         cy.get(LoginPage.loginButton).click()
         cy.url().should("include","/dashboard/index") // Verify that dashboard page is displayed
-        cy.get(DashboardPage.userprofileDropdown).should('be.visible') // Verify that user is logged in successfully
+        cy.get(DashboardPage.userProfileDropdown).should('be.visible') // Verify that user is logged in successfully
      
     })
 
@@ -159,10 +159,10 @@ describe ('Login',()=>{
         cy.get(LoginPage.passwordInput).type(Cypress.env("validPassword"))
         cy.get(LoginPage.loginButton).click()
         cy.url().should("include","/dashboard/index") // Verify that dashboard page is displayed
-        cy.get(DashboardPage.userprofileDropdown).should("be.visible")
+        cy.get(DashboardPage.userProfileDropdown).should("be.visible")
         // cy.reload();
-        cy.get(DashboardPage.userprofileDropdownIcon).click()
-        cy.xpath(DashboardPage.userprofileMenu).contains("Logout").click();
+        cy.get(DashboardPage.userProfileDropdownIcon).click()
+        cy.xpath(DashboardPage.userProfileMenu).contains("Logout").click();
         //cy.xpath(DashboardPage.logoutButton).click()
         cy.url().should("include","/auth/login") // Verify that login page is displayed again
     })
