@@ -20,5 +20,8 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000, // Increase timeout to 10 seconds
 
     // This sets the path for the test cases 
+
+    video: true, // Ensure this is set to true
+
   },
 });

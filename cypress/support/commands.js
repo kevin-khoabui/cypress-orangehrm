@@ -25,3 +25,10 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-xpath';
+import LoginPage from './pageObjects/loginpage';
+
+Cypress.Commands.add('loginFunction',(username,password) =>{
+    cy.get(LoginPage.usernameInput).type(username)
+    cy.get(LoginPage.passwordInput).type(password)
+    cy.get(LoginPage.loginButton).click()
+})
