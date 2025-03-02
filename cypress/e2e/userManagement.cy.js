@@ -1,5 +1,4 @@
 import 'cypress-xpath'
-import LoginPage from '../support/pageObjects/loginpage'
 import LeftMenu from '../support/pageObjects/leftmenu'
 import AdminPage from '../support/pageObjects/adminpage'
 import '../support/commands'
@@ -45,20 +44,14 @@ describe ('User Management Test Suite',()=>{
         const uniqueUsername = "Ranga" + Date.now()
         cy.xpath(AdminPage.usernameTxtField).type(uniqueUsername)
 
-        //cy.get(AdminPage.passwordTxtField).type("Password123")
-        //cy.xpath('(//input[@type="password"])').first().type("Test@1234");
-        //cy.xpath('(//input[@type="password"])').last().type("Test@1234");
-
         cy.get(AdminPage.passwordTxtField).first().type("Password@123")
         cy.get(AdminPage.confirmPasswordTxtField).last().type("Password@123")
 
         cy.get(AdminPage.saveButton).click()
-        //cy.wait(2000)
-        //cy.get(".oxd-table").contains('.oxd-table-cell',uniqueUsername).should('be.visible')
-
+       
         cy.get(AdminPage.usernameSearchTextField).type(uniqueUsername)
         cy.xpath(AdminPage.searchButton).click()
-        cy.get(".oxd-table").contains('.oxd-table-cell',uniqueUsername).should('be.visible')
+        cy.get(AdminPage.userTable).contains(AdminPage.userTableCell,uniqueUsername).should("be.visible")
 
     })
 

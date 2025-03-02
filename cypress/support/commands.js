@@ -24,9 +24,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import 'cypress-xpath';
-import LoginPage from './pageObjects/loginpage';
+import 'cypress-xpath'; //import cypress-xpath to use xpath in our test cases
+import LoginPage from './pageObjects/loginpage'; //import LoginPage object to get the locators
 
+// Create loginFunction which we can reuse in our test cases. 
+// This will take some arguments like username and password
 Cypress.Commands.add('loginFunction',(username,password) =>{
     cy.get(LoginPage.usernameInput).type(username)
     cy.get(LoginPage.passwordInput).type(password)

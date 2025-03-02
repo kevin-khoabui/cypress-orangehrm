@@ -5,6 +5,9 @@ class AdminPage {
     addButton = "//button[normalize-space()='Add']"
     usernameSearchTextField = ":nth-child(1)>.oxd-input-group>:nth-child(2)>.oxd-input"
     searchButton = "//button[normalize-space()='Search']"
+    userTable = ".oxd-table"
+    userTableCell = ".oxd-table-cell"
+
 
     /* Add User Page */
     userRolesDropDown = ".oxd-select-wrapper"
@@ -19,6 +22,7 @@ class AdminPage {
     passwordTxtField = "[type='password']" // First Text Field
     confirmPasswordTxtField = "[type='password']" // Second Text Field
     saveButton = ".oxd-button--secondary"
+
     
 
 }
